@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Compare two websites</title>
+  <title>Compare two websites</title>
 <style>
 body {
-	padding: 0;
-	margin: 0;
-	background-size: 40px 40px;
-	background-image: linear-gradient(to right, grey 1px, transparent 1px), linear-gradient(to bottom, grey 1px, transparent 1px);
+  padding: 0;
+  margin: 0;
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, grey 1px, transparent 1px), linear-gradient(to bottom, grey 1px, transparent 1px);
 }
 
 .bar {
-	padding: 10px;
-	width: 100%;
-	height; 30px;
-	overflow: hidden;
-	background: #cc9966;
+  padding: 10px;
+  width: 100%;
+  height; 30px;
+  overflow: hidden;
+  background: #cc9966;
 }
 
 .content {
-	width: 100%;
-	height: auto;
-	min-height: 600px;
-	text-align: center;
-	position: relative;
+  width: 100%;
+  height: auto;
+  min-height: 600px;
+  text-align: center;
+  position: relative;
 }
 
 input#url1,
 input#url2 {
-	width: 300px;
+  width: 300px;
 }
 
 iframe {
-	border: 0px;
+  border: 0px;
 }
 
 iframe.offset {
-	top: 10px;
+  top: 10px;
 }
 
 </style>
@@ -44,91 +44,91 @@ iframe.offset {
 <body>
 
 <div class="bar">
-	<input id="url1">
-	<input id="url2">
+  <input id="url1">
+  <input id="url2">
 
-	<button id="opacity25">Opacity 25%</button>
-	<button id="opacity50">Opacity 50%</button>
-	<button id="opacity75">Opacity 75%</button>
+  <button id="opacity25">Opacity 25%</button>
+  <button id="opacity50">Opacity 50%</button>
+  <button id="opacity75">Opacity 75%</button>
 
-	<button id="width760">Width 760px</button>
-	<button id="width900">Width 900px</button>
-	<button id="width1200">Width 1200px</button>
-	<button id="width1440">Width 1440px</button>
+  <button id="width760">Width 760px</button>
+  <button id="width900">Width 900px</button>
+  <button id="width1200">Width 1200px</button>
+  <button id="width1440">Width 1440px</button>
 
-	<button id="offset">Offset 10px</button>
+  <button id="offset">Offset 10px</button>
 </div>
 
 <div class="content">
-	<iframe class="iframe1" src="" style="
-		position: absolute;
-		z-index: 999;
-		width: 900px;
-		height: 10000px;
-		opacity: 0.5;
-	"></iframe>
-	<iframe class="iframe2" src="" style="
-		width: 900px;
-		height: 10000px;
-	"></iframe>
+  <iframe class="iframe1" src="" style="
+    position: absolute;
+    z-index: 999;
+    width: 900px;
+    height: 10000px;
+    opacity: 0.5;
+  "></iframe>
+  <iframe class="iframe2" src="" style="
+    width: 900px;
+    height: 10000px;
+  "></iframe>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"
-	integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-	crossorigin="anonymous"></script>
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
 
 <script>
-	// change urls on page load
-	$(document).ready(function() {
-		$('.iframe1').attr('src', localStorage.getItem('url1'));
-		$('#url1').attr('value', localStorage.getItem('url1'));
-		
-		$('.iframe2').attr('src', localStorage.getItem('url2'));
-		$('#url2').attr('value', localStorage.getItem('url2'));
-	});
+  // change urls on page load
+  $(document).ready(function() {
+    $('.iframe1').attr('src', localStorage.getItem('url1'));
+    $('#url1').attr('value', localStorage.getItem('url1'));
+    
+    $('.iframe2').attr('src', localStorage.getItem('url2'));
+    $('#url2').attr('value', localStorage.getItem('url2'));
+  });
 
-	$('#opacity25').click(function() {
-		$('.iframe1').css('opacity', 0.25);
-	});
-	$('#opacity50').click(function() {
-		$('.iframe1').css('opacity', 0.5);
-	});
-	$('#opacity75').click(function() {
-		$('.iframe1').css('opacity', 0.75);
-	});
+  $('#opacity25').click(function() {
+    $('.iframe1').css('opacity', 0.25);
+  });
+  $('#opacity50').click(function() {
+    $('.iframe1').css('opacity', 0.5);
+  });
+  $('#opacity75').click(function() {
+    $('.iframe1').css('opacity', 0.75);
+  });
 
-	$('#width760').click(function() {
-		$('.iframe1').css('width', '760px');
-		$('.iframe2').css('width', '760px');
-	});
+  $('#width760').click(function() {
+    $('.iframe1').css('width', '760px');
+    $('.iframe2').css('width', '760px');
+  });
 
-	$('#width900').click(function() {
-		$('.iframe1').css('width', '900px');
-		$('.iframe2').css('width', '900px');
-	});
+  $('#width900').click(function() {
+    $('.iframe1').css('width', '900px');
+    $('.iframe2').css('width', '900px');
+  });
 
-	$('#width1200').click(function() {
-		$('.iframe1').css('width', '1200px');
-		$('.iframe2').css('width', '1200px');
-	});
+  $('#width1200').click(function() {
+    $('.iframe1').css('width', '1200px');
+    $('.iframe2').css('width', '1200px');
+  });
 
-	$('#width1440').click(function() {
-		$('.iframe1').css('width', '1440px');
-		$('.iframe2').css('width', '1440px');
-	});
+  $('#width1440').click(function() {
+    $('.iframe1').css('width', '1440px');
+    $('.iframe2').css('width', '1440px');
+  });
 
-	$('#offset').click(function() {
-		$('.iframe1').toggleClass('offset');
-	});
+  $('#offset').click(function() {
+    $('.iframe1').toggleClass('offset');
+  });
 
-	$('#url1').focusout(function() {
-		$('.iframe1').attr('src', this.value);
-		localStorage.setItem('url1', this.value);
-	});
-	$('#url2').focusout(function() {
-		$('.iframe2').attr('src', this.value);
-		localStorage.setItem('url2', this.value);
-	});
+  $('#url1').focusout(function() {
+    $('.iframe1').attr('src', this.value);
+    localStorage.setItem('url1', this.value);
+  });
+  $('#url2').focusout(function() {
+    $('.iframe2').attr('src', this.value);
+    localStorage.setItem('url2', this.value);
+  });
 </script>
 
 </body>
